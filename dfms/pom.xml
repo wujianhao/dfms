@@ -25,6 +25,8 @@
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
 		<poi.version>3.16</poi.version>
 		<net.sourceforge.jexcelapi.version>2.6.12</net.sourceforge.jexcelapi.version>
+		
+		<hadoop.version>2.6.4</hadoop.version> 
 	</properties>
 	<dependencies>
 		<!-- 单元测试工具junit -->
@@ -195,6 +197,61 @@
 			<artifactId>jxl</artifactId>
 			<version>${net.sourceforge.jexcelapi.version}</version>
 		</dependency>
+
+
+
+<!-- 添加hadoop支持 -->  
+        <dependency>  
+            <groupId>org.apache.hadoop</groupId>  
+            <artifactId>hadoop-hdfs</artifactId>  
+            <version>${hadoop.version}</version>  
+            <exclusions>  
+                <exclusion>  
+                    <groupId>javax.servlet</groupId>  
+                    <artifactId>servlet-api</artifactId>  
+                </exclusion>  
+            </exclusions>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.hadoop</groupId>  
+            <artifactId>hadoop-auth</artifactId>  
+            <version>${hadoop.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.hadoop</groupId>  
+            <artifactId>hadoop-common</artifactId>  
+            <version>${hadoop.version}</version>  
+            <exclusions>  
+                <exclusion>  
+                    <groupId>javax.servlet</groupId>  
+                    <artifactId>servlet-api</artifactId>  
+                </exclusion>  
+            </exclusions>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.hadoop</groupId>  
+            <artifactId>hadoop-mapreduce-client-core</artifactId>  
+            <version>${hadoop.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.hadoop</groupId>  
+            <artifactId>hadoop-mapreduce-client-common</artifactId>  
+            <version>${hadoop.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.hadoop</groupId>  
+            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>  
+            <version>${hadoop.version}</version>  
+        </dependency> 
+
+
+
+
+
+
+
+
+
 
 	</dependencies>
 	<!-- 配置tomcat插件 -->
