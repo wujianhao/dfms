@@ -4,6 +4,7 @@ import java.io.File;
 import java.net.URI;
 
 
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.hadoop.conf.Configuration;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.zdjy.bigdata.dfms.entity.User;
 
 @Controller
 @RequestMapping("/")
@@ -36,7 +39,7 @@ public class TestController {
        
 		// 查看是否上传
 		/*printPath(fileSystem, new Path("/"));*/
-        
+        User user=(User) session.getAttribute("user");
         try {
             uploadFile.transferTo(file);
         } catch (Exception e) {
@@ -46,7 +49,7 @@ public class TestController {
         
         FileSystem fileSystem;
 		try {
-			fileSystem = FileSystem.get(new URI("hdfs://centos201:9000"), new Configuration(), "centos");
+			fileSystem = FileSystem.get(new URI("hdfs://centos201:9000"), new Configuration(), user.getName());
 			// 上传，从本地文件系统传到hdfs系统
 			fileSystem.copyFromLocalFile(new Path("D:\\用户目录\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+filename), new Path("/"));
 		} catch (Exception e1) {

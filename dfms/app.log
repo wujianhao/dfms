@@ -606,3 +606,235 @@ freemarker.core.NonStringException: [... Exception message was already printed; 
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+2017-08-31 21:04:52,525 [http-bio-8081-exec-7] [freemarker.runtime]-[ERROR] Error executing FreeMarker template
+FreeMarker template error:
+For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), but this has evaluated to a sequence (wrapper: f.t.SimpleSequence):
+==> dpList  [in template "index.jsp" at line 134, column 64]
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${dpList}  [in template "index.jsp" at line 134, column 62]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.NonStringException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:390)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-31 21:12:06,502 [http-bio-8081-exec-1] [freemarker.runtime]-[ERROR] Error executing FreeMarker template
+FreeMarker template error:
+For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), but this has evaluated to a sequence (wrapper: f.t.SimpleSequence):
+==> dpList  [in template "index.jsp" at line 134, column 64]
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${dpList}  [in template "index.jsp" at line 134, column 62]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.NonStringException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:390)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-31 21:13:23,755 [http-bio-8081-exec-5] [freemarker.runtime]-[ERROR] Error executing FreeMarker template
+FreeMarker template error:
+For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), but this has evaluated to a sequence (wrapper: f.t.SimpleSequence):
+==> dpList  [in template "index.jsp" at line 147, column 109]
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${dpList}  [in template "index.jsp" at line 147, column 107]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.NonStringException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:390)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-08-31 21:23:44,714 [http-bio-8081-exec-3] [freemarker.runtime]-[ERROR] Error executing FreeMarker template
+FreeMarker template error:
+For "${...}" content: Expected a string or something automatically convertible to string (number, date or boolean), but this has evaluated to a sequence (wrapper: f.t.SimpleSequence):
+==> dpList  [in template "index.jsp" at line 147, column 109]
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${dpList}  [in template "index.jsp" at line 147, column 107]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.NonStringException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.EvalUtil.coerceModelToString(EvalUtil.java:390)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
