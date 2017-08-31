@@ -36,6 +36,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dfms</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -19,8 +19,7 @@
     <div class="message">HDFS文件管理系统</div>
     <div id="darkbannerwrap"></div>
     
-    <form method="post" action="user/login.do">
-		<input name="action" value="login" type="hidden">
+    <form method="post" action="user/index.do">
 		<input name="name" placeholder="用户名" required="" type="text">
 		<hr class="hr15">
 		<input name="pwd" placeholder="密码" required="" type="password">
