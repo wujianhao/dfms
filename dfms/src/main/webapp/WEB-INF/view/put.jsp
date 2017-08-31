@@ -178,9 +178,16 @@
                                 <div class="card-body">
                                     <table class="table">
                                     <div class="form-group">
-                                            <input type="file" id="exampleInputFile"><button type="submit">提交</button>
-                                        </div>
-                                        <thead>
+                                     <form action="${pageContext.request.contextPath }/dfms/upload.do" method="post" enctype="multipart/form-data"> 
+                                     	 <!-- 上传用户：<input type="text" name="username"><br/> 
+                                     	  上传文件1：<input type="file" name="file1"><br/> 
+                                     	 上传文件2：<input type="file" name="file2"><br/>  
+                                     	<input type="submit" value="提交"> --> 
+                                     	<input type="file" id="exampleInputFile" name="uploadFile"><button type="submit">提交</button>
+                                     	</form>
+                                            <!-- <input type="file" id="exampleInputFile"><button type="submit">提交</button> -->
+                                       </div>
+                                     <!--    <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
@@ -207,9 +214,9 @@
                                                 <td>the Bird</td>
                                                 <td>@twitter</td>
                                             </tr>
-                                        </tbody>
+                                        </tbody> -->
                                     </table>
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-sm-6">
                                             <div class="sub-title">Table Striped <span class="description">( .table-striped )</span></div>
                                             <table class="table table-striped">
@@ -242,8 +249,8 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div>
-                                        <div class="col-sm-6">
+                                        </div> -->
+                                        <!-- <div class="col-sm-6">
                                             <div class="sub-title">Table Bordered <span class="description">( .table-bordered )</span></div>
                                             <table class="table table-bordered">
                                                 <thead>
@@ -276,8 +283,8 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
-                                    <div class="row">
+                                    </div> -->
+                                   <!--  <div class="row">
                                         <div class="col-sm-6">
                                             <div class="sub-title">Table Hover <span class="description">( .table-hover )</span></div>
                                             <table class="table table-hover">
@@ -310,8 +317,8 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div>
-                                        <div class="col-sm-6">
+                                        </div> -->
+                                        <!-- <div class="col-sm-6">
                                             <div class="sub-title">Table Condensed <span class="description">( .table-condensed )</span></div>
                                             <table class="table table-condensed">
                                                 <thead>
@@ -344,8 +351,8 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
-                                    <div class="row">
+                                    </div> -->
+                                    <!-- <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="sub-title">Contextual classes <span class="description">( .active , .success , .info , .warning , .danger )</span></div>
                                             <table class="table">
@@ -415,7 +422,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

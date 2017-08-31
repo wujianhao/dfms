@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ $# -eq 0 ]
+then
+        echo "ERROR:«Î ‰»Î≤Œ ˝"
+        exit 1
+fi
+for i in 201 202 203
+do
+        echo "-------------------centos@$i----------------------"
+        ssh centos@centos$i "source /etc/profile;$*"
+done
