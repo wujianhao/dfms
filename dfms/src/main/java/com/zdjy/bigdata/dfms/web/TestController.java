@@ -1,12 +1,14 @@
 package com.zdjy.bigdata.dfms.web;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
-
+import java.net.URISyntaxException;
 
 import javax.servlet.http.HttpSession;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.springframework.stereotype.Controller;
@@ -46,9 +48,9 @@ public class TestController {
         
         FileSystem fileSystem;
 		try {
-			fileSystem = FileSystem.get(new URI("hdfs://centos201:9000"), new Configuration(), "centos");
+			fileSystem = connect();
 			// 上传，从本地文件系统传到hdfs系统
-			fileSystem.copyFromLocalFile(new Path("D:\\用户目录\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+filename), new Path("/"));
+			fileSystem.copyFromLocalFile(new Path("D:\\Documents\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+filename), new Path("/"));
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -60,4 +62,41 @@ public class TestController {
         mv.setViewName("index");
         return mv;
     }
+	
+	@RequestMapping("down")
+    public ModelAndView downFile(String down_name,HttpSession session) throws Exception{
+		FileSystem fileSystem=connect();
+		Path down_path=new Path("D:\\Documents\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+down_name);
+        FileStatus[] listStatus = fileSystem.listStatus(new Path(down_name));
+        Path path = null;
+        for(FileStatus fileStatus:listStatus){
+        	path=fileStatus.getPath();
+        }
+		try {
+			fileSystem.copyToLocalFile(path, down_path);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} 
+        //重定向
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        return mv;
+    }
+	
+	@RequestMapping("delete")
+	public String delete(String delete_name) throws Exception {
+		FileSystem fileSystem = connect();
+		//第二个参数代表递归删除,主要用在删除目录上
+		String path="hdfs://wu11:9000"+delete_name;
+		fileSystem.delete(new Path(path), true);
+		//查看是否删除
+		return "delete";
+	}
+	
+	
+	public FileSystem connect() throws Exception {
+		FileSystem fileSystem = FileSystem.get(new URI("hdfs://wu11:9000"), new Configuration(), "centos");
+		return fileSystem;
+	}
 }
