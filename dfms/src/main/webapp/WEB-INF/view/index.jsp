@@ -1,7 +1,9 @@
 <#assign base=request.contextPath />
+<%@page import="com.zdjy.bigdata.dfms.entity.User"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+	
 <!DOCTYPE html>
 
 <html>
@@ -25,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="${base }/css/style.css">
     <link rel="stylesheet" type="text/css" href="${base }/css/themes/flat-blue.css">
 </head>
+<%User user=session.getAttribute("user") %>
 
 <body class="flat-blue">
     <div class="app-container">
@@ -83,15 +86,14 @@
                             </ul>
                         </li>
                         <li class="dropdown profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">用户名 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${user.name }<span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
                                     <img src="${base }/img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">当前用户</h4>
-                                        <p>emily_hart@email.com</p>
+                                        <h4 class="username">${user.name }</h4>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 自己的文件</button>
                                             <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 退出</button>
@@ -129,16 +131,10 @@
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                           <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
+                                           <c:forEach items="${dpList }" var="delist">
+                                           <li><a>${delist.name }</a></li>
+                                           </c:forEach>
+                                      
                                            
                                         </ul>
                                     </div>

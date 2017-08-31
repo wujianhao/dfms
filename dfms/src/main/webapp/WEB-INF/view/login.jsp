@@ -19,14 +19,13 @@
     <div class="message">HDFS文件管理系统</div>
     <div id="darkbannerwrap"></div>
     
-    <form method="post" action="user/index.do">
+    <form method="post" action="/dfms/user/index.do">
 		<input name="name" placeholder="用户名" required="" type="text">
 		<hr class="hr15">
 		<input name="pwd" placeholder="密码" required="" type="password">
 		<hr class="hr15">
 		<input value="登陆" style="width:100%;" type="submit">
 		<hr class="hr20">
-
 	</form>
 
 	

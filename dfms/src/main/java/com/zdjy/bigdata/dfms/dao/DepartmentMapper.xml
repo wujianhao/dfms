@@ -161,4 +161,7 @@
     set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectALL" resultType="map">
+  select * from department 
+  </select>
 </mapper>
