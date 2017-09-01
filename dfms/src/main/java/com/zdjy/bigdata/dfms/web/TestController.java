@@ -23,7 +23,7 @@ import com.zdjy.bigdata.dfms.entity.User;
 @Controller
 @RequestMapping("/")
 public class TestController {
-
+Connection con=new Connection();
 	@RequestMapping("/{page}")
 	public String shen(@PathVariable String page){
 		return page;
@@ -51,7 +51,7 @@ public class TestController {
         
         FileSystem fileSystem;
 		try {
-			fileSystem = connect();
+			fileSystem = con.connect();
 //			fileSystem = FileSystem.get(new URI("hdfs://centos201:9000"), new Configuration(), user.getName());
 			// 上传，从本地文件系统传到hdfs系统
 			fileSystem.copyFromLocalFile(new Path("D:\\Documents\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+filename), new Path("/"));
@@ -69,7 +69,7 @@ public class TestController {
 	
 	@RequestMapping("down")
     public ModelAndView downFile(String down_name,HttpSession session) throws Exception{
-		FileSystem fileSystem=connect();
+		FileSystem fileSystem= con.connect();
 		Path down_path=new Path("D:\\Documents\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+down_name);
         FileStatus[] listStatus = fileSystem.listStatus(new Path(down_name));
         Path path = null;
@@ -90,7 +90,7 @@ public class TestController {
 	
 	@RequestMapping("delete")
 	public String delete(String delete_name) throws Exception {
-		FileSystem fileSystem = connect();
+		FileSystem fileSystem = con.connect();
 		//第二个参数代表递归删除,主要用在删除目录上
 		String path="hdfs://wu11:9000"+delete_name;
 		fileSystem.delete(new Path(path), true);
@@ -99,8 +99,5 @@ public class TestController {
 	}
 	
 	
-	public FileSystem connect() throws Exception {
-		FileSystem fileSystem = FileSystem.get(new URI("hdfs://wu11:9000"), new Configuration(), "centos");
-		return fileSystem;
-	}
+	
 }
