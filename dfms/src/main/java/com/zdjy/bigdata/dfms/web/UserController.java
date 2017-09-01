@@ -31,7 +31,6 @@ public class UserController {
 		if(user!=null){
 		session.setAttribute("user", user);
 		request.setAttribute("dpList", deList);
-		System.out.println(deList.size()+"11sssssss5");
 		FileSystem fileSystem = FileSystem.get(new URI("hdfs://centos201:9000"), new Configuration(), user.getName());
 		}
 		return "index";
