@@ -11,6 +11,8 @@ import org.apache.hadoop.fs.FileSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mysql.cj.api.Session;
 import com.zdjy.bigdata.dfms.entity.User;
 import com.zdjy.bigdata.dfms.service.DepartmentService;
 import com.zdjy.bigdata.dfms.service.UserService;
@@ -23,6 +25,7 @@ public class UserController {
     @Autowired
     private DepartmentService departmentservice;
 	
+    Connection Con = new Connection();
 	
 	@RequestMapping("index")
 	public String findByname(String name,HttpSession session,HttpServletRequest request) throws Exception{
@@ -30,10 +33,17 @@ public class UserController {
 		List deList = departmentservice.selectALL();
 		if(user!=null){
 		session.setAttribute("user", user);
-		request.setAttribute("dpList", deList);
-		FileSystem fileSystem = FileSystem.get(new URI("hdfs://centos201:9000"), new Configuration(), user.getName());
+		session.setAttribute("dpList", deList);
+		FileSystem fileSystem = Con.connect();
 		}
 		return "index";
 				
+	}
+	
+	@RequestMapping("exit")
+	public String exit(HttpSession session){
+		session.removeAttribute("user");
+		session.removeAttribute("dpList");
+		return "login";
 	}
 }

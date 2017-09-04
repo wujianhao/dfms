@@ -90,7 +90,7 @@
 												<i class="fa fa-check icon"></i> 新的文件</li>
 										</a>
 
-										<a href="#">
+										<a href="/dfms/ml/muluload.do">
 											<li class="list-group-item message">查看所有文件</li>
 										</a>
 									</ul>
@@ -108,10 +108,10 @@
 										<h4 class="username">${user.name }</h4>
 										<div class="btn-group margin-bottom-2x" role="group">
 											<button type="button" class="btn btn-default">
-												<i class="fa fa-user"></i> 自己的文件
+												<i class="fa fa-user"></i> <a href="/dfms/ml/muluload.do">自己的文件</a>
 											</button>
 											<button type="button" class="btn btn-default">
-												<i class="fa fa-sign-out"></i> 退出
+												<i class="fa fa-sign-out"></i> <a href="/dfms/user/exit.do">退出</a>
 											</button>
 										</div>
 									</div>
@@ -144,9 +144,9 @@
 								<div id="dropdown-element" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul class="nav navbar-nav">
-											<c:forEach items="${dpList }" var="delist">
-												<li><a>${delist.name }</a></li>
-											</c:forEach>
+											<#list dpList as a>
+												<li><a>${a.name }</a></li>
+											</#list>
 
 
 										</ul>
@@ -241,7 +241,6 @@
 										</form>
 										
 										<div class="title">上传区域</div>
-										<div class="sub-title">点击浏览选择文件</div>
 									</div>
                                    </div>
 								</div>

@@ -70,7 +70,7 @@
                                             </li>
                                         </a>
 
-                                        <a href="#">
+                                        <a href="/dfms/ml/muluload.do">
                                             <li class="list-group-item message">
                                                                                                                查看所有文件
                                             </li>
@@ -88,12 +88,12 @@
                                 <li>
                                     <div class="profile-info">
                                         <h4 class="username">当前用户</h4>
-                                        <p>emily_hart@email.com</p>
+                                        <p>${user.name }</p>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                         <form action="ml/muluload.do" method="post">
-                                        	 <button type="submit" class="btn btn-default"><i class="fa fa-user"></i> 自己的文件</button>
+                                        	 <button type="submit" class="btn btn-default"><i class="fa fa-user"></i> <a href="/dfms/ml/muluload.do">自己的文件</a></button>
                                         	 </form>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 退出</button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> <a href="/dfms/user/exit.do">退出</a></button>
                                         </div>
                                     </div>
                                 </li>
@@ -128,16 +128,9 @@
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                           <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
-                                            <li><a href="">目录一</a>
-                                            </li>
+                                           <#list dpList as a>
+												<li><a>${a.name }</a></li>
+											</#list>
                                            
                                         </ul>
                                     </div>
@@ -162,8 +155,7 @@
             <div class="container-fluid">
                 <div class="side-body">
                     <div class="page-title">
-                        <span class="title">Table</span>
-                        <div class="description">A bootstrap table for display list of data.</div>
+                        <span class="title">文件系统</span>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
@@ -171,7 +163,7 @@
                                 <div class="card-header">
 
                                     <div class="card-title">
-                                    <div class="title">Table</div>
+                                    <div class="title">目录</div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -195,7 +187,9 @@
                                                 <td>${a.len }</td>
                                                 <td>${a.user }</td>
                                                 <td>${a.time }</td>
-                                                <td><a href="#">删除</a></td>
+                                                <td><a href="/dfms/ml/xia.do?dizhi=${a.pwd }">下级</a></td>
+                                                <td><a href="/dfms/delete.do?delete_name=${a.pwd }">删除</a></td>
+                                                <td><a href="/dfms/down.do?down_name=${a.pwd }">下载</a></td>
                                             </tr>
                                      	 </#list>
                                         </tbody>

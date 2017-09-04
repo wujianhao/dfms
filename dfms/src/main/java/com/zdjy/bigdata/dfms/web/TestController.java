@@ -70,7 +70,7 @@ Connection con=new Connection();
 	@RequestMapping("down")
     public ModelAndView downFile(String down_name,HttpSession session) throws Exception{
 		FileSystem fileSystem= con.connect();
-		Path down_path=new Path("D:\\Documents\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\"+down_name);
+		Path down_path=new Path("D:\\Documents\\我的文档\\GitHub\\dfms\\dfms\\src\\main\\webapp\\upload\\");
         FileStatus[] listStatus = fileSystem.listStatus(new Path(down_name));
         Path path = null;
         for(FileStatus fileStatus:listStatus){
